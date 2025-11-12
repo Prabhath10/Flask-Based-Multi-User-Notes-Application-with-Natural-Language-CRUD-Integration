@@ -1,0 +1,81 @@
+CS5200 - Programming Assignment 2
+Student ID: 700794792
+Title: Flask-Based Multi-User Notes Application with Natural Language CRUD Integration
+Overview
+This project implements a web-based notes management application using Flask (Python) and SQLite. Each user can register, log in, create, view, update, and delete notes. Additionally, users can perform CRUD operations using natural language commands, which are processed by either a rule-based text parser or an optional open-source LLM integration via llm_integration.py.
+Project Structure
+
+700794792_PROGRAMMING_ASSIGNMENT2/
+│
+├── app.py                   # Main Flask application
+├── models.py                # Database models (User & Note)
+├── llm_integration.py       # Handles natural language CRUD or connects to an LLM
+├── db_init.sql              # SQL script to initialize the database
+├── requirements.txt         # Python dependencies
+├── notes.db                 # SQLite database (auto-created if missing)
+│
+├── templates/
+│   └── index.html           # Frontend UI (login, notes, LLM interface)
+│
+└── static/
+    └── main.js              # Frontend JavaScript (fetch API calls)
+
+Installation Instructions
+Step 1 — Prerequisites:
+• Windows 10 or higher
+• Python 3.12+
+• Visual Studio Code (recommended)
+Step 2 — Setup Virtual Environment:
+python -m venv venv
+venv\Scripts\activate
+Step 3 — Install Dependencies:
+pip install -r requirements.txt
+If LLM compilation fails, use:
+pip install Flask SQLAlchemy Flask-Login Flask-WTF python-dotenv
+Step 4 — Initialize Database:
+Option 1: python init_db.py
+Option 2: python -c "from models import init_db; init_db(); print('✅ Database created successfully')"
+Step 5 — Run Flask Server:
+python app.py
+Then open: http://127.0.0.1:5000
+Usage Guide
+1. Register/Login using username and password.
+2. Create notes by entering topic and message.
+3. View all notes via Refresh.
+4. Delete/Update via natural language commands like:
+   create note about Shopping: Buy milk
+   list notes
+   update note 1 set message to Buy bread
+   delete note 2
+Features Implemented
+•	Multi-user login - Each user has their own notes
+•	SQLite database - Persistent data storage
+•	Flask backend - Handles routes, sessions, API endpoints
+•	HTML + JS frontend - User interface for CRUD operations
+•	Natural language CRUD commands - Text-based note management
+•	Optional LLM integration - For open-source model connection
+Technologies Used
+•	Python (Flask, SQLAlchemy)
+•	SQLite3
+•	HTML, CSS, JavaScript (Fetch API)
+•	Optional: llama-cpp-python / Ollama for LLM
+Expected Output
+After launching the app:
+1. User registers and logs in.
+2. Creates and views notes.
+3. Executes CRUD commands in natural language.
+4. Notes are stored in local notes.db.
+Submission Package
+
+app.py
+models.py
+llm_integration.py
+db_init.sql
+requirements.txt
+notes.db
+templates/
+static/
+README.docx
+
+Conclusion
+This project demonstrates the ability to design a full-stack web application using Flask, implement secure multi-user authentication, perform CRUD operations on a relational database, and integrate natural language commands for interactive database management. It fulfills all requirements of CS5200 Programming Assignment 2.

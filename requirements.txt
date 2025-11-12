@@ -1,0 +1,8 @@
+Flask==2.3.3
+SQLAlchemy==2.0.22
+Flask-Login==0.6.2
+Flask-WTF==1.1.1
+python-dotenv==1.0.0
+llama-cpp-python==0.1.55   # OPTIONAL: only if you will use a local Llama model
+llama-index==0.9.24        # OPTIONAL helper (if you use LlamaIndex)
+  

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Notes App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    h1 { color: #2c3e50; }
+    input, textarea { margin: 5px; padding: 6px; width: 250px; }
+    button { margin: 5px; padding: 6px 12px; }
+    #crud { margin-top: 20px; }
+    ul { list-style-type: none; padding: 0; }
+  </style>
+</head>
+<body>
+  <h1>Personal Notes For Prabhath</h1>
+
+  <div id="auth">
+    <h3>Register / Login</h3>
+    <input id="username" placeholder="username" />
+    <input id="password" placeholder="password" type="password" />
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div id="crud" style="display:none;">
+    <h3>Create a Note</h3>
+    <input id="topic" placeholder="topic" />
+    <input id="message" placeholder="message" />
+    <button onclick="createNote()">Create</button>
+
+    <h3>Your Notes</h3>
+    <button onclick="loadNotes()">Refresh</button>
+    <ul id="notesList"></ul>
+
+    <h3>Natural Language Commands</h3>
+    <textarea id="nlcmd" rows="3" cols="50"
+      placeholder="Example: create note about Shopping: Buy milk"></textarea><br/>
+    <button onclick="sendLLM()">Send Command</button>
+    <pre id="llmResult"></pre>
+  </div>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>
